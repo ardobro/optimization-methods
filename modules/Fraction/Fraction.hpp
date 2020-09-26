@@ -2,7 +2,7 @@
 
 #include <iostream>
 #include <string>
-#include "FractionException.hpp"
+#include "../FractionException.hpp"
 
 class Fraction {
     private:

@@ -1,9 +1,10 @@
-# Makefile for Guassian Elimination project
+CC=g++
 
-all: main
+SOURCES= main.cpp ./modules/Fraction/Fraction.cpp
 
-main: main.cpp Fraction.cpp
-	g++ -o main main.cpp Fraction.cpp
+EXECUTABLE=main
 
-clean:
-	rm -rf main
+all: $(SOURCES) $(EXECUTABLE)
+	
+$(EXECUTABLE): $(OBJECTS) 
+	$(CC) -o $@
