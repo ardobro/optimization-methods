@@ -54,28 +54,28 @@ Fraction Fraction::operator+(const Fraction& fraction) const {
     int numerator = this->numerator * fraction.denominator + fraction.numerator * this->denominator;
     int denominator = this->lcm(this->denominator, fraction.denominator);
 
-    return Fraction(numerator, denominator);;
+    return Fraction(numerator, denominator);
 }
 
 Fraction Fraction::operator-(const Fraction& fraction) const {
     int numerator = this->numerator * fraction.denominator - fraction.numerator * this->denominator;
     int denominator = this->lcm(this->denominator, fraction.denominator);
 
-    return Fraction(numerator, denominator);;
+    return Fraction(numerator, denominator);
 }
 
 Fraction Fraction::operator*(const Fraction& fraction) const {
     int numerator = this->numerator * fraction.numerator;
     int denominator = this->denominator * fraction.denominator;
 
-    return Fraction(numerator, denominator);;
+    return Fraction(numerator, denominator);
 }
 
 Fraction Fraction::operator/(const Fraction& fraction) const {
     int numerator = this->numerator * fraction.denominator;
     int denominator = this->denominator * fraction.numerator;
 
-    return Fraction(numerator, denominator);;
+    return Fraction(numerator, denominator);
 }
 
 std::ostream& operator<<(std::ostream &out, const Fraction& fraction) {
