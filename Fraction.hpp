@@ -2,45 +2,28 @@
 
 #include <iostream>
 #include <string>
+#include "FractionException.hpp"
 
 class Fraction {
     private:
-        /* Числитель */
-        int numerator;
-        /* Знаменатель */
-        int denominator;
+        int numerator, denominator;
 
-        /* Получить НОД */
-        int gcd(int, int);
-        /* Получить НОК */
-        int lcm(int, int);
+        int gcd(int, int) const;
+        int lcm(int, int) const;
 
     public:
         Fraction() {}
-        Fraction(int);
-        Fraction(int, int);
-        // Fraction(double);
-        // Fraction(float);
+        Fraction(const int&);
+        Fraction(const int&, const int&);
         ~Fraction() {}
 
-        /* Сократить дробь */
         void reduce();
 
-        bool operator==(Fraction&);
-        Fraction operator+(Fraction&);
-        Fraction operator-(Fraction&);
-        Fraction operator*(Fraction&);
-        Fraction operator/(Fraction&);
+        bool operator==(const Fraction&) const;
+        Fraction operator+(const Fraction&) const;
+        Fraction operator-(const Fraction&) const;
+        Fraction operator*(const Fraction&) const;
+        Fraction operator/(const Fraction&) const;
 
         friend std::ostream& operator<<(std::ostream &out, const Fraction &fraction);
-};
-
-class FractionException {
-    private:
-        std::string m_error;
-
-    public:
-        FractionException(std::string error) : m_error(error) {}
-
-        const char* getError() {return m_error.c_str();}
 };
