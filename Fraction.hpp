@@ -10,27 +10,27 @@ class Fraction {
         /* Знаменатель */
         int denominator;
 
-        /* Поиск НОД алгоритмом Евклида */
+        /* Получить НОД */
         int gcd(int, int);
-        /* Сократить дробь */
-        // void reduce();
+        /* Получить НОК */
+        int lcm(int, int);
 
     public:
-        void reduce();
         Fraction() {}
         Fraction(int);
         Fraction(int, int);
         // Fraction(double);
         // Fraction(float);
-        // ~Fraction() {}
+        ~Fraction() {}
 
-        // float toFloat();
-        // double toDouble();
+        /* Сократить дробь */
+        void reduce();
 
-        // Fraction& operator+(const Fraction &term);
-        // Fraction& operator-(const Fraction &term);
-        // Fraction& operator*(const Fraction &term);
-        // Fraction& operator/(const Fraction &term);
+        bool operator==(Fraction&);
+        Fraction operator+(Fraction&);
+        Fraction operator-(Fraction&);
+        Fraction operator*(Fraction&);
+        Fraction operator/(Fraction&);
 
         friend std::ostream& operator<<(std::ostream &out, const Fraction &fraction);
 };
