@@ -7,6 +7,9 @@ int Fraction::gcd(int a, int b) const {
 
     a = std::abs(a);
     if (a < b) {
+        if (!a) {
+            return b;
+        }
         std::swap(a, b);
     }
     
